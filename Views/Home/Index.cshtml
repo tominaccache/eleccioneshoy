@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div>
+    <section class="imagen">
+        
+    </section>
+    <div class="row">
+        @foreach (Partido item in ViewBag.ListaPartidos)
+        {
+            <div class="col-12 col-md-4">
+                <a href='@Url.Action("VerDetallePartido","Home",new {IdPartido=@item.IdPartido})'>
+                    <div class="partidos">
+                        <img src="@item.Logo">
+                        <h3>@item.Nombre</h3>
+                    </div>
+                </a>
+            </div>            
+        }
+    </div>
+
+</div>
+
+

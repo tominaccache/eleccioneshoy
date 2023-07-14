@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "VerDetalleCandidato";
+}
+<div class="tituloDetalleCandidato">
+    <h1>Información sobre @ViewBag.InfoCandidato.Nombre @ViewBag.InfoCandidato.Apellido</h1>
+</div>
+
+<div style="margin: 1%; padding: 1%;" class="divDetalleCandidato">
+    <img src="@ViewBag.InfoCandidato.Foto">
+    <div class="textoCandidato">
+        <p>Fecha de nacimiento: @ViewBag.InfoCandidato.FechaNacimiento.ToShortDateString()</p>
+        <p>ID: @ViewBag.InfoCandidato.IDCandidato</p>
+        <p>ID del partido: @ViewBag.InfoCandidato.IDPartido</p>
+        <p>Postulacion: @ViewBag.InfoCandidato.Postulacion</p>
+    </div>
+</div>
+
+ <a  href='@Url.Action("VerDetallePartido",new {IDPartido=@ViewBag.InfoCandidato.IDPartido})'>
+<div class="boton">
+<article>
+    <p>Volver al partido</p>
+</article>
+</div>
+</a>
